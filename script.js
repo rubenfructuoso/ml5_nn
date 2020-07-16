@@ -30,7 +30,7 @@ function dataLoaded() {
     }
 
 
-    stroke(0,0,0,70);
+    stroke(0);
     noFill();
     ellipse(inputs.x, inputs.y, 24);
     fill(0);
