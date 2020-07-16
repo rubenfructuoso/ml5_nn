@@ -28,14 +28,14 @@ function dataLoaded() {
 
         var inputs = data[i].xs;
         var target = data[i].ys;
-        stroke(0);
+        stroke(0,0,0,50);
         noFill();
         ellipse(inputs.x, inputs.y, 24);
         fill(0);
         noStroke();
         textAlign(CENTER, CENTER);
         text(target.label, inputs.x, inputs.y);
-        
+
     }
 }
 
