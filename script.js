@@ -55,7 +55,7 @@ function keyPressed() {
         console.log('Training started!');
         model.normalizeData();
         let options = {
-            epochs: 300
+            epochs: 200
         };
         model.train(options, whileTraining, finishedTraining);
 
@@ -63,7 +63,13 @@ function keyPressed() {
 
         model.saveData('mouse-notes');
 
+    } else if (key == 'm') {
+
+        model.save('mouse-notes')
+
     }
+
+
 
     targetLabel = key.toUpperCase();
 
