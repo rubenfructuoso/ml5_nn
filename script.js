@@ -11,16 +11,19 @@ function setup() {
         inputs: ['x', 'y'],
         outputs: ['label'],
         task: 'classification',
-        debug: 'true'
+        debug: 'true',
+        learningRate: 0.5
     };
 
     model = ml5.neuralNetwork(options);
+    model.loadData('mouse-notes.json');
 
 }
 
 function keyPressed() {
 
     if (key == 't') {
+
         state = 'training';
         console.log('Training started!');
         model.normalizeData();
@@ -28,6 +31,11 @@ function keyPressed() {
             epochs: 300
         };
         model.train(options, whileTraining, finishedTraining);
+
+    } else if (key == 's') {
+
+        model.saveData('mouse-notes');
+
     }
 
     targetLabel = key.toUpperCase();
