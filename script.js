@@ -18,6 +18,20 @@ function setup() {
     model = ml5.neuralNetwork(options);
     model.loadData('mouse-notes.json', dataLoaded);
 
+    const files = {
+        model: 'model/model.json',
+        metadata: 'model/model_meta.json',
+        weights: 'model/model.weights.bin',
+      };
+
+    model.load(files, modelLoaded);
+
+}
+
+function modelLoaded() {
+
+    console.log('Model loaded!');
+
 }
 
 function dataLoaded() {
@@ -38,13 +52,13 @@ function dataLoaded() {
 
     }
 
-    state = 'training';
+    /* state = 'training';
     console.log('Training started!');
     model.normalizeData();
     let options = {
         epochs: 200
     };
-    model.train(options, whileTraining, finishedTraining);
+    model.train(options, whileTraining, finishedTraining); */
 }
 
 function keyPressed() {
@@ -65,7 +79,7 @@ function keyPressed() {
 
     } else if (key == 'm') {
 
-        model.save('mouse-notes')
+        model.save('mouse-notes');
 
     }
 
