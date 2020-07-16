@@ -25,8 +25,8 @@ function dataLoaded() {
     console.log(model.data);
     let data = model.data.data.raw;
     for (let i = 0; i < data.length; i++) {
-        let inputs = data[i].xs;
-        let target = data[i].ys;
+        var inputs = data[i].xs;
+        var target = data[i].ys;
     }
 
 
