@@ -36,7 +36,7 @@ function dataLoaded() {
     fill(0);
     noStroke();
     textAlign(CENTER, CENTER);
-    text(target.label, mouseX, mouseY);
+    text(target.label, inputs.x, inputs.y);
 
 }
 
