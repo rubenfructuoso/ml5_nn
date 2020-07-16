@@ -42,7 +42,7 @@ function dataLoaded() {
     console.log('Training started!');
     model.normalizeData();
     let options = {
-        epochs: 300
+        epochs: 200
     };
     model.train(options, whileTraining, finishedTraining);
 }
