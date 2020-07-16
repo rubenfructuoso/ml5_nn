@@ -16,7 +16,27 @@ function setup() {
     };
 
     model = ml5.neuralNetwork(options);
-    model.loadData('mouse-notes.json');
+    model.loadData('mouse-notes.json', dataLoaded);
+
+}
+
+function dataLoaded() {
+
+    console.log(model.data);
+    let data = model.data.raw;
+    for (let i = 0; i < data.length; i++) {
+        let inputs = data[i].xs;
+        let target = data[i].ys;
+    }
+
+
+    stroke(0,0,0,70);
+    noFill();
+    ellipse(inputs.x, inputs.y, 24);
+    fill(0);
+    noStroke();
+    textAlign(CENTER, CENTER);
+    text(target.label, mouseX, mouseY);
 
 }
 
