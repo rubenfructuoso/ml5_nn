@@ -28,7 +28,7 @@ function dataLoaded() {
 
         var inputs = data[i].xs;
         var target = data[i].ys;
-        stroke(0,0,0,50);
+        stroke(0, 0, 0, 50);
         noFill();
         ellipse(inputs.x, inputs.y, 24);
         fill(0);
@@ -37,6 +37,14 @@ function dataLoaded() {
         text(target.label, inputs.x, inputs.y);
 
     }
+
+    state = 'training';
+    console.log('Training started!');
+    model.normalizeData();
+    let options = {
+        epochs: 300
+    };
+    model.train(options, whileTraining, finishedTraining);
 }
 
 function keyPressed() {
