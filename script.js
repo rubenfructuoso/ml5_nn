@@ -25,19 +25,18 @@ function dataLoaded() {
     console.log(model.data);
     let data = model.data.data.raw;
     for (let i = 0; i < data.length; i++) {
+
         var inputs = data[i].xs;
         var target = data[i].ys;
+        stroke(0);
+        noFill();
+        ellipse(inputs.x, inputs.y, 24);
+        fill(0);
+        noStroke();
+        textAlign(CENTER, CENTER);
+        text(target.label, inputs.x, inputs.y);
+        
     }
-
-
-    stroke(0);
-    noFill();
-    ellipse(inputs.x, inputs.y, 24);
-    fill(0);
-    noStroke();
-    textAlign(CENTER, CENTER);
-    text(target.label, inputs.x, inputs.y);
-
 }
 
 function keyPressed() {
@@ -114,7 +113,7 @@ function gotResults(error, results) {
     }
     console.log(results);
     stroke(0);
-    fill(0,0,255,100);
+    fill(0, 0, 255, 100);
     ellipse(mouseX, mouseY, 24);
     fill(0);
     noStroke();
