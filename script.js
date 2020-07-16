@@ -31,6 +31,7 @@ function setup() {
 function modelLoaded() {
 
     console.log('Model loaded!');
+    state = 'prediction';
 
 }
 
